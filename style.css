@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-desaturated-red: rgb(206, 151, 151);
+  --primary-soft-red: hsl(0, 93%, 68%);
+
+  --neutral-grayish-red: hsl(0, 6%, 24%);
+
+  --gradient-01: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
+  --gradient-02: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  font-size: 16px;
+  min-height: 100vh;
+  background: var(--gradient-01);
+}
+
+.column.column--left .logo-container {
+  padding: 20px 25px;
+}
+
+.column.column--left .logo-container a {
+  display: block;
+}
+
+.column.column--left .logo-container a img {
+  width: 115px;
+}
+
+.column.column--left .mobile-banner {
+  display: block;
+  position: relative;
+  height: 250px;
+}
+
+.column.column--left .mobile-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.column.column--left .content {
+  padding: 65px 18px;
+  text-align: center;
+}
+
+.column.column--left .content .title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--neutral-grayish-red);
+  margin-bottom: 1rem;
+}
+
+.column.column--left .content .title h1 {
+  font-weight: 600;
+  letter-spacing: 8px;
+}
+
+.column.column--left .content .title h1 span {
+  display: block;
+}
+
+.column.column--left .content .title h1 span:first-child {
+  color: var(--primary-desaturated-red);
+  font-weight: 300;
+}
+
+.column.column--left .content .intro {
+  color: var(--primary-desaturated-red);
+  line-height: 1.5em;
+  margin-bottom: 2.5rem;
+}
+
+.column.column--left #myForm {
+  position: relative;
+}
+
+#myForm input {
+  outline: none;
+  border: 1px solid var(--primary-desaturated-red);
+  background-color: #ffffff;
+  font-size: 1rem;
+  width: 100%;
+  display: block;
+  padding: 1rem;
+  border-radius: 50px;
+  color: var(--neutral-grayish-red);
+}
+
+#myForm .error-message {
+  position: absolute;
+  bottom: -24px;
+  left: 1rem;
+  color: red;
+  font-size: .9rem;
+  display: none;
+}
+
+#myForm .error-icon {
+  position: absolute;
+  right: 95px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+#myForm ::placeholder {
+  color: var(--primary-desaturated-red);
+  opacity: .5;
+}
+
+#myForm button {
+  outline: none;
+  border: none;
+  background: var(--gradient-02);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 85px;
+  z-index: 99;
+  border-radius: 50px;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
+
+#myForm button:hover {
+  box-shadow: 0 0 10px hsl(0deg 36% 70%);
+}
+
+.column.column--right {
+  display: none;
+}
+
+.main-footer {
+  display: block;
+}
+
+.column.column--left footer {
+  display: none;
+}
+
+@media only screen and (min-width: 768px){
+  .column.column--left .mobile-banner {
+    height: 410px;
+  }
+
+  .main-footer {
+    padding: 1rem 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  main {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  .column.column--left{
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-position: top left;
+    flex: 0 0 60vw;
+    padding: 2rem 6rem 2rem 10rem;
+  }
+
+  .column.column--left .logo-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .column.column--left .mobile-banner {
+    display: none;
+  }
+
+  .column.column--left .content {
+    padding: 145px 0 85px;
+    text-align: left;
+    max-width: 450px;
+  }
+
+  .column.column--left .content .title {
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+  }
+
+  .column.column--left .content .title h1 {
+    letter-spacing: 1rem;
+  }
+  
+  .column.column--left footer {
+    display: block;
+  }
+
+  .column.column--right {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 40vw;
+  }
+
+  .column.column--right .hero {
+    height: 100%;
+  }
+
+  .column.column--right .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-footer {
+    display: none;
+  }
+}
